@@ -1,5 +1,17 @@
 # bluepill-serial-monster
 
+This is a customized version of bluepill-serial-monster repository for irrihacktor project.
+Main customizations done are related to gpio selection (mux).
+
+Uart used for EByte E32 Lora xcver is the usart 3 (called port2 in this project).
+RTS signal is routed to PB1 which handle M0 of Lora module.
+DTR signal is routed to PB0 which handle M1 of Lora module.
+
+Build with stm32duino bootloader support:
+make clean && STM32CUBE_PATH=~/hacking/repos/STM32CubeF1/ make FIRMWARE_ORIGIN=0x8002000
+
+Below, the original readme content.
+
 _bluepill-serial-monster_ is a firmware for _STM32 Blue Pill_ that turns it
 into a _3 Port USB-to-Serial_ adapter. The firmware implements a USB 2.0
 full-speed composite device that consists of 3 USB CDC devices.
